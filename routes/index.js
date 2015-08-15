@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var appdata = require('../data.json');
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
 
 	var myArtwork = [];
@@ -15,7 +14,8 @@ router.get('/', function(req, res, next) {
 	res.render('index', { 
 		title: 'Home',
 		artwork: myArtwork,
-		artists: myArtists
+		artists: myArtists,
+		page: 'home'
 	});
 });
 
@@ -32,7 +32,8 @@ router.get('/speakers', function(req, res, next) {
 	res.render('speakers', { 
 		title: 'Speakers',
 		artwork: myArtwork,
-		artists: myArtists
+		artists: myArtists,
+		page: 'artistList'
 	});
 });
 
@@ -51,7 +52,8 @@ router.get('/speakers/:speakerid', function(req, res, next) {
 	res.render('speakers', { 
 		title: 'Speakers',
 		artwork: myArtwork,
-		artists: myArtists
+		artists: myArtists,
+		page: 'artistDetail'
 	});
 });
 
